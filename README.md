@@ -1,2 +1,18 @@
 # redux-saga-demo
-Demo project for playing with redux-saga
+
+Demo проект для демонстрации методов использования redux-saga. Основано на [докладе](https://slides.com/pelid80/redux-saga) для MoscowJS
+
+## Как запустить
+
+Из папки проекта запустить:
+
+```
+:::bash
+
+$ npm install
+$ npm start
+```
+
+## Что смотреть
+
+Все самое интересное находится в папке pages. На каждую страницу заведено по отдельному каталогу.

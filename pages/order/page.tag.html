@@ -1,0 +1,36 @@
+<order-page>
+  <h1>Заказ #666</h1>
+
+  <form onsubmit={onSubmit} class="form-horizontal">
+
+    <div class="form-group {'has-error': errors}">
+      <label for="addressInput" class="col-sm-2 control-label">Укажите адрес доставки</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="addressInput" placeholder="г.Москва" ref="address">
+        <span class="help-block" each={error in errors}>{ error }</span>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Отправить</button>
+  </form>
+
+  <script type="text/javascript">
+
+    this.onSubmit = event => {
+      let formData = [
+        ['address', this.refs.address.value],
+      ]
+      opts.pageChannel.put(formData)
+      event.preventDefault()
+    }
+
+    // подписываемся на изменения в store /
+    this.on('mount', ()=>{
+      let unsubscribe = opts.store.subscribe(()=>{
+        this.errors = opts.store.getState().errors
+        this.update()
+      })
+      this.on('unmount', unsubscribe)
+    })
+  </script>
+</order-page>

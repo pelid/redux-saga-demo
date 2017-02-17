@@ -1,0 +1,39 @@
+{
+  "name": "redux-saga-demo",
+  "version": "0.0.1",
+  "description": "Demo project",
+  "main": "index.js",
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "file-loader": "^0.10.0",
+    "lodash": "^4.17.4",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.14.3",
+    "riot": "^3.2.1",
+    "riot-route": "^3.1.0",
+    "riotjs-loader": "^4.0.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "webpack-dev-server --watch --inline --colors --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pelid/redux-saga-demo.git"
+  },
+  "keywords": [
+    "redux-saga"
+  ],
+  "author": "Evgeny Evseev pelid80@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pelid/redux-saga-demo/issues"
+  },
+  "homepage": "https://github.com/pelid/redux-saga-demo#readme"
+}

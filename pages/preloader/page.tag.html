@@ -1,0 +1,27 @@
+<page-with-preloader>
+  <h1>Страница с прелоадером</h1>
+  <div show={isRunning}>
+    <p class="lead">Прелоадер исчезнет в течение 5 секунд</p>
+    <p>
+      <img src={ preloaderImg } show={isRunning}>
+    </p>
+  </div>
+  <div show={!isRunning}>
+    <p class="lead">
+      Работа выполнена, прелоадер исчез. Нажми F5 чтобы повторить
+    </p>
+  </div>
+
+  <script type="text/javascript">
+    this.preloaderImg = require('./gears.svg')
+
+    // подписываемся на изменения в store /
+    this.on('mount', ()=>{
+      let unsubscribe = opts.store.subscribe(()=>{
+        this.isRunning = opts.store.getState().isRunning
+        this.update()
+      })
+      this.on('unmount', unsubscribe)
+    })
+  </script>
+</page-with-preloader>
