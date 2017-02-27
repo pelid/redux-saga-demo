@@ -17,17 +17,17 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: './babel-cache',
+            }
+          },
+          {
             loader: 'riotjs-loader',
             options: {
               type: 'none'
             }
           },
-          {
-            loader: 'babel-loader',
-            options: {
-              cacheDirectory: './babel-cache',
-            }
-          }
         ]
       },
       {
