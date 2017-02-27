@@ -7,11 +7,12 @@ import {runRouting} from './router.js'
 import runIndexPage from './pages/index-page'
 import runOrderPage from './pages/order'
 import runPageWithPreloader from './pages/preloader'
-
+import runCounterPage from './pages/counter/'
 
 const urlScheme = [
   ['/', runIndexPage],
   ['/order', runOrderPage],
+  ['/counter', runCounterPage],
   ['/preloader', runPageWithPreloader]
 ]
 

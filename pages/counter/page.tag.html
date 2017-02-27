@@ -1,0 +1,16 @@
+<counter-page>
+  <div class="container">
+    <h1>{opts.msg || 'Заголовок'}</h1>
+    <h3>Счетчик: {props.counter}</h3>
+  </div>
+
+  <script type="text/javascript">
+    this.on('mount', ()=>{
+      let unsubscribe = opts.pageStore.subscribe(()=>{
+        this.props = opts.pageStore.getState()
+        this.update()
+      })
+      this.on('unmount', unsubscribe)
+    })
+  </script>
+</counter-page>
