@@ -3,9 +3,7 @@ var _ = require('lodash');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: (
-    'source-map',
-  ),
+  devtool: 'source-map',
   entry: './app.js',
   plugins: [
     new webpack.ProvidePlugin({
